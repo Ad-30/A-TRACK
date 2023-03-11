@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.101.0">
+  <title>Detais</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+
+
+
+  <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+  <meta name="theme-color" content="#712cf9">
+
+
+  <link rel="stylesheet" href="/css/signup.css">
+
+
+  <!-- Custom styles for this template -->
+
+</head>
+
+<body class="text-center">
+
+  <main class="form-signin w-100 m-auto">
+    <form action="/details" method="POST" class="signin">
+
+
+      <h1 class="h3 mb-3 fw-normal">Details</h1>
+
+      <div class="form-floating">
+        <input name="fname" type="text" class="form-control top" id="floatingInput1" placeholder="First name" required autofocus >
+        <label for="floatingInput">Name</label>
+      </div>
+      <!-- <div class="form-floating">
+        <input name="lname" type="text" class="form-control bottom" id="floatingInput2" placeholder="Last name" autofocus >
+        <label for="floatingPassword">Last name</label>
+      </div> -->
+      <div class="form-floating">
+        <input name="email" type="email" class="form-control bottom" id="floatingInput2" placeholder="E-mail" required autofocus autocomplete="@gmail.com">
+        <label for="floatingPassword">E-mail</label>
+      </div>
+      <!-- <div class="form-floating">
+        <input name="college" type="Text" class="form-control bottom" id="floatingInput2" placeholder="College" required autofocus >
+        <label for="floatingPassword">College</label>
+      </div> -->
+      <!-- <div class="form-floating">
+        <input name="course" type="text" class="form-control bottom" id="floatingInput2" placeholder="Semester Last Date"    required autofocus>
+        <label for="floatingPassword">Course</label>
+      </div> -->
+      <div class="form-floating">
+        <input name="total" type="text" class="form-control bottom" id="floatingInput2" placeholder="Total classes" required autofocus >
+        <label for="floatingPassword">Total classes happened till now</label>
+      </div>
+      <div class="form-floating">
+        <input name="current" type="text" class="form-control bottom" id="floatingInput2" placeholder="Attended classes"    required autofocus>
+        <label for="floatingPassword">Total classes you have attended till now</label>
+      </div>
+        <!-- <div class="form-floating">
+          <input name="branch" type="text" class="form-control bottom" id="floatingInput2" placeholder="Semester Last Date"  required autofocus>
+          <label for="floatingPassword">Branch</label>
+        </div> -->
+      <div class="form-floating">
+        <input name="semester" type="text" class="form-control bottom" id="floatingInput2" placeholder="Semester" minlength="1" pattern="\d*" maxlength="1" required autofocus>
+        <label for="floatingPassword">Semester</label>
+      </div>
+      <!-- <div class="form-floating">
+        <input name="startDate" type="date" class="form-control bottom" id="floatingInput2" placeholder="Semester Start Date"  required autofocus>
+        <label for="floatingPassword">Semester Start Date</label>
+      </div> -->
+      <!-- <div class="form-floating">
+        <input name="endDate" type="date" class="form-control bottom" id="floatingInput2" placeholder="Semester Last Date" minlength="10" pattern="\d*" maxlength="10" required autofocus>
+        <label for="floatingPassword">Semester Last Date</label>
+      </div> -->
+
+      <!-- <div class="form-floating">
+        <input name="endDate" type="date" class="form-control bottom" id="floatingInput3" placeholder="Semester Last Date"  required autofocus>
+        <label for="floatingPassword">Semester Last Date</label>
+      </div>
+      <div class="form-floating">
+        <input name="subjects" type="text" class="form-control top" id="floatingInput1" placeholder="Total subjects" minlength="1" pattern="\d*" maxlength="2" required autofocus>
+        <label for="floatingInput">Total subjects</label>
+      </div>
+      <div class="form-floating">
+        <input name="lecture" type="text" class="form-control bottom" id="floatingInput2" placeholder="No. of lecture" autofocus minlength="1" pattern="\d*" maxlength="2" required autofocus>
+        <label for="floatingPassword">No. of lecture</label>
+      </div>
+      <div class="form-floating">
+        <input name="labs" type="Text" class="form-control bottom" id="floatingInput2" placeholder="No. of labs" autofocus minlength="1" pattern="\d*" maxlength="2" required autofocus>
+        <label for="floatingPassword">No. of labs</label>
+      </div>
+      <div class="form-floating">
+        <input name="lecat" type="text" class="form-control bottom" id="floatingInput2" placeholder="Lecture attendence" minlength="1" pattern="\d*" maxlength="1" required autofocus>
+        <label for="floatingPassword">Per lecture given attendence</label>
+      </div>
+      <div class="form-floating">
+        <input name="labat" type="text" class="form-control bottom" id="floatingInput2" placeholder="lab attendence" minlength="1" pattern="\d*" maxlength="1" required autofocus>
+        <label for="floatingPassword">Per lab given attendence</label>
+      </div> -->
+      <!-- <div class="form-floating">
+        <input name="semester" type="text" class="form-control bottom" id="floatingInput2" placeholder="Semester" minlength="10" pattern="\d*" maxlength="1" required autofocus>
+        <label for="floatingPassword">Semester</label>
+      </div> -->
+      <!-- <div class="form-floating">
+        <input name="startDate" type="date" class="form-control bottom" id="floatingInput2" placeholder="Semester Start Date" minlength="10" pattern="\d*" maxlength="10" required autofocus>
+        <label for="floatingPassword">Semester Start Date</label>
+      </div> -->
+      <!-- <div class="form-floating">
+        <input name="endDate" type="date" class="form-control bottom" id="floatingInput2" placeholder="Semester Last Date" minlength="10" pattern="\d*" maxlength="10" required autofocus>
+        <label for="floatingPassword">Semester Last Date</label>
+      </div> -->
+
+      <div class="form-floating">
+        <input name="minper" type="text" class="form-control bottom" id="floatingInput3" placeholder="Semester Last Date" minlength="1" pattern="\d*" maxlength="2" required autofocus>
+        <label for="floatingPassword">Minimum Percentage required</label>
+      </div>
+
+
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Proceed</button>
+
+      <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+    </form>
+  </main>
+
+
+  <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>

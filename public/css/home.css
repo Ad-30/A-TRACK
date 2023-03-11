@@ -1,0 +1,36 @@
+.per{
+    font-size: 50px;
+    color: #4a98f7;
+    display: flex;
+    justify-content: center;
+}
+
+.inline{
+    display: flex;
+    height: 5vh;
+    justify-content: center;
+
+}
+
+div label {
+    font-size: 30px;
+}
+
+div option {
+    font-size: 20px;
+}
+
+.lec{
+    background: rgb(124, 143, 205);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background: greenyellow;
+    top: 50vh;
+    height: 200px;
+    width: 200px;
+}
