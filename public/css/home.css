@@ -1,3 +1,134 @@
+#for {
+  font-size: 1.1rem;
+}
+html{
+  scroll-behavior: smooth;
+}
+#head {
+  font-size: 2rem;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#div1 {
+  height: 500px;
+}
+
+#div2 {
+  align-items: center;
+  /* width:1440px; */
+  position: relative;
+  top: 150px;
+}
+
+
+.yup{
+  background-color: rgb(124, 143, 205);
+  align-items: center;
+
+
+}
+
+.best{
+  height: 500px;
+}
+
+@media only screen and (min-width: 992px) {
+  #log1829{
+    display: none;
+  }
+.h3 {
+position: relative;
+left: 5%;
+}
+.hh{
+  line-height: 70px;
+
+}
+.size2{
+  width:80%;
+  margin-left: 250px;
+}
+.h2 {
+position: relative;
+left: 3.4%;
+}
+
+.h1 {
+position: relative;
+left: 1.3%;
+}
+.hb{
+position: relative;
+left:-25%;
+}
+}
+
+
+@media only screen and (max-width: 768px) {
+  #log1829{
+    position: relative;
+    left:75%;
+    bottom:50%;
+  }
+  #datecss{
+    font-size: 2.2rem;
+    line-height: 6rem;
+  }
+  .else{
+    margin-bottom: 100px;
+  }
+  .h3 {
+    position: relative;
+    left: 16%;
+  }
+  .size2{
+    width:80%;
+    margin-left: 20px;
+  }
+  .h2 {
+    position: relative;
+    left: 9%;
+  }
+
+  .h1 {
+    position: relative;
+    left: %;
+    margin-left: 20px;
+  }
+  .b1{
+    margin-left: 20px;
+  }
+  .best{
+    height: 500px;
+  }
+  .btn{
+    margin-bottom: 60px;
+  }
+  #mobent{
+    font-size: 1rem;
+
+  }
+  .hh{
+    line-height: 60px;
+    border-bottom: 1px solid black;
+    padding-top: 20px;
+  }
+  #selemob{
+    /* position: absolute;
+    right:25px; */
+    float: right;
+    position: relative;
+    top:20px;
+
+  }
+
+}
+
+
+
+
+
 .per{
     font-size: 50px;
     color: #4a98f7;

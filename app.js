@@ -17,32 +17,10 @@ const app = express();
 mongoose.connect(process.env.MONGO);
 const LocalStrategy = require('passport-local');
 let mail_id = "";
-let useremail = "";
-let lecattend = "";
-let labattend = "";
-let isumattend = "";
-let lectotal = "";
-let labtotal = "";
-let isumtotal = "";
+
 let current2 = "";
 let total2 = "";
-let details = {
-  fname : "",
-  lname : "",
-  college : "",
-  course : "",
-  branch : "",
-  sem : "",
-  startDate : "",
-  endDate : "",
-  subjects : "",
-  lecture : "",
 
-  labs : "",
-  lecat : "",
-  labat : "",
-  minper : ""
-};
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -120,21 +98,9 @@ passport.deserializeUser(function(user, done) {
 const detailSchema = {
   username : String,
   fname : String,
-  // lname : String,
   email : String,
   date : String,
-  // college : String,
-  // course : String,
-  // branch : String,
   sem : Number,
-  // startDate : Date,
-  // endDate : Date,
-  // subjects : Number,
-  // lecture : Number,
-  //
-  // labs : Number,
-  // lecat : Number,
-  // labat : Number,
   minper : Number,
   total : Number,
   current : Number
@@ -173,11 +139,6 @@ app.get("/home", function(req, res) {
         date1: today
       });
     });
-
-    // Details.find({username:req.user.username},function(err, results){
-    //   current2 = results.current;
-    //   total2 = results.total;
-    // });
 
 
   } else {
@@ -227,67 +188,61 @@ const today = now.toLocaleDateString('en-IN', options);
   details = new Details({
     username : req.user.username,
     fname : req.body.fname,
-    // lname : req.body.lname,
-    email : req.body.email,
+    email : req.user.username,
     date : today,
-    // college : req.body.college,
-    // course : req.body.course,
-    // branch : req.body.branch,
     sem : req.body.semester,
-    // startDate : req.body.startDate,
-    // endDate : req.body.endDate,
-    // subjects : req.body.subjects,
-    // lecture : req.body.lecture,
-    //
-    // labs : req.body.labs,
-    // lecat : req.body.lecat,
-    // labat : req.body.labat,
     minper : req.body.minper,
     total : req.body.total,
     current : req.body.current
   });
   details.save().then(() => res.redirect("/home"));
-  // details.save(function saving(err) {
-  //
-  //   if (!err) {
-  //
-  //
-  //     fname = details.fname;
-  //     lname = details.lname;
-  //     mail_id = details.email;
-  //
-  //
-  //     var mailOptions = {
-  //       from: '"A-track" <process.env.MAIL_ID1>',
-  //       to: mail_id,
-  //       subject: 'Registered',
-  //       text: '' + '' + "Hy" + ' .',
-  //       html: '<h3>Dear ' + fname + ' ' + lname + ',</h3><br>You have successfully registered at A-track' + '<h3 style="color:red">' + "" + '</h3>'
-  //     };
-  //
-  //     transporter.sendMail(mailOptions, function(error, info) {
-  //       if (error) {
-  //         console.log(error);
-  //       } else {
-  //         console.log('Email sent: ' + info.response);
-  //       }
-  //     });
-  //   }
-  // });
+    // if(!err){
+    //   res.redirect("/home");
+    // }
+    // if(!err){
+    //   fname = details.fname;
+    //   // lname = details.lname;
+    //   mail_id = details.email;
+    //
+    //
+    //   var mailOptions = {
+    //     from: '"A-track" <process.env.MAIL_ID1>',
+    //     to: mail_id,
+    //     subject: 'Registered',
+    //     text: '' + '' + "Hy" + ' .',
+    //     html: '<h3>Dear ' + fname + ' ' + lname + ',</h3><br>You have successfully registered at A-track' + '<h3 style="color:red">' + "" + '</h3>'
+    //   };
+    //
+    //   transporter.sendMail(mailOptions, function(error, info) {
+    //     if (error) {
+    //       console.log(error);
+    //     } else {
+    //       console.log('Email sent: ' + info.response);
+    //     }
+    //   });
+    //   res.redirect("/home");
+    //
+    // }
 
-  // console.log(details);
+  // => res.redirect("/home"));
+  // details.save(function saving(err) {
+
+
+
 
 });
 
 app.post("/home",function(req,res){
-  let lec1 = req.body.lecture;
-  let lab1 = req.body.lab;
-  let i1 = req.body.i;
+  let lec1 = req.body.lecture1;
+  let lab1 = req.body.lab1;
+  let crt1 = req.body.crt1;
+  let tpo1 = req.body.tpo1;
   let lec2 = req.body.lecture2;
   let lab2 = req.body.lab2;
-  let i2 = req.body.ii;
-  let total1 = parseInt(lec2)+parseInt(lab2*2)+parseInt(i2*3)
-  let current1 = parseInt(lec1)+parseInt(lab1*2)+parseInt(i1*3)
+  let crt2 = req.body.crt2;
+  let tpo2 = req.body.tpo2
+  let total1 = parseInt(lec2)+parseInt(lab2*2)+parseInt(crt2*2)+parseInt(tpo2*3)
+  let current1 = parseInt(lec1)+parseInt(lab1*2)+parseInt(crt1*2)+parseInt(tpo1*3)
 
   const now = new Date();
 const options = {
@@ -301,46 +256,43 @@ const today = now.toLocaleDateString('en-IN', options);
   const query = Details.updateOne({username: req.user.username},{$inc: { total: total1 , current : current1},$set: { date: today}});
   const promise = query.exec();
   promise.then(() => res.redirect("/home"));
-    // function(err){
-    // if(err){
-    //   console.log(err);
-    // }
-    // else{
-    //   res.redirect("/home");
-    // }
-  // });
-  // Details.updateOne({username: req.user.username},{$inc: { total: total1 , current : current1}},function(err,result){
-  //   if(err){
-  //     console.log(err);
-  //   }
-  //   else{
-  //     res.redirect("/home");
-  //   }
-  // })
+
 });
 
 
-app.get("/details2", function(req, res) {
-  res.render("details2");
-});
+app.get("/check",function(req,res){
+  if (req.isAuthenticated()) {
+    const now = new Date();
+  const options = {
+    timeZone: 'Asia/Kolkata',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  };
+  const today = now.toLocaleDateString('en-IN', options);
+    const date = new Date();
+    const query = Details.findOne({username:req.user.username});
+    const promise = query.exec();
+    promise.then(function(results){
 
-app.get("/see", function(req, res) {
-  res.render("see");
-});
-app.post("/see",function(req,res){
-   useremail = req.body.email;
-   res.redirect("/see2");
-});
-app.get("/see2", function(req, res) {
-  Details.find().then((datas)=>{
+      current2 = results.current;
+      total2 = results.total;
 
-    res.render("see2", {
-      id: useremail,
-      data: datas
-
+      res.render('check',{
+        percent : (parseInt(current2)/parseInt(total2))*100,
+        data : results,
+        date : date,
+        date1: today
+      });
     });
-  });
-});
+
+
+  } else {
+    res.render("login");
+  }
+})
+
+
 app.get('/logout', function(req, res, next){
   req.logout(function(err) {
     if (err) { return next(err); }

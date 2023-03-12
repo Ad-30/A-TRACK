@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/home.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="/css/bootstrap-grid.css">
+  <!-- <link rel="stylesheet" href="/css/bootstrap-grid.css"> -->
   <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<script src="https://kit.fontawesome.com/850c737ebd.js" crossorigin="anonymous"></script>
+
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
   <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -21,7 +21,7 @@
   <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
   <meta name="theme-color" content="#712cf9">
   <style media="screen">
-    .hex {}
+
   </style>
 </head>
 
@@ -49,10 +49,6 @@
 
   <br><br><br><br><br><br><br><br><br>
 
-
-    <a id="log1829" href="/logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
-
-
   <h1 class="per">Hi <%=data.fname%>,</h1>
   <h1 id="head" class="per">Your current attendance percent is <%=percent%>%</h1>
   <center><% if (percent<data.minper) { %>
@@ -66,25 +62,74 @@
     <% } %>
   </center>
   <br><br><br><br><br><br>
-  <h1 class="per" id="datecss"><%=date.toDateString()%></h1>
+  <h1 class="per"><%=date.toDateString()%></h1>
   <% if (data.date != date1) { %>
+  <div id="div1">
+    <div class="lec">
+
+      <form class="inline" action="/home" method="POST">
+        <!-- <div class="container">
 
 
-  <!-- <center> -->
-  <div class="best">
+        <div class="row"> -->
 
 
-  <div class="yup">
+        <div class="col-lg-6 col-md-6 col-sm-6 b1">
+          <label id="for" for="lecture">Enter no of Lectures Attended</label><br>&nbsp;&nbsp;
+          <select id="" name="lecture">
+            <option value="0">0</option>p;
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+        &nbsp; &nbsp;
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <label id="for" for="lecture">Enter no of Labs Attended</label><br>&nbsp; &nbsp;
+          <select id="" name="lab">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
 
 
-  <form method="post" action="/home">
-    <div class="size2">
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+        &nbsp; &nbsp;
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <label id="for" for="lecture">Enter no of i3 Sessions Attended</label><br>&nbsp; &nbsp;
+          <select id="" name="i">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+
+    </div>
+    <!-- </form> -->
 
 
-    <div class="row" >
-      <div class="col-sm-6 hh">
-        <label for="field1" id="mobent">Enter no of Lectures Attended</label>
-        <select id="selemob" name="lecture1">
+    <!-- </div> -->
+
+
+    <div class="lec">
+      <!-- <form class="inline"> -->
+      <!-- <div class="row"> -->
+
+
+      <div class="col-lg-4 col-md-6 col-sm-6 h1">
+        <label id="for" for="lecture">Enter total no of Lectures</label><br>&nbsp;&nbsp;
+        <select id="" name="lecture2">
           <option value="0">0</option>p;
           <option value="1">1</option>
           <option value="2">2</option>
@@ -95,24 +140,12 @@
           <option value="7">7</option>
         </select>
       </div>
-      <div class="col-sm-6 hh">
-        <label for="field2" id="mobent">Enter total no of Lectures</label>
-        <select id="selemob" name="lecture2">
-          <option value="0">0</option>p;
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 hh">
-        <label for="field3" id="mobent">Enter no of Labs Attended</label>
-        <select id="selemob" name="lab1">
+      &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+      &nbsp; &nbsp;
+
+      <div class="col-lg-4 col-md-6 col-sm-6 h2">
+        <label id="for" for="lecture">Enter Total no of Labs</label><br>&nbsp; &nbsp;
+        <select id="" name="lab2">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -121,92 +154,33 @@
           <option value="5">5</option>
         </select>
       </div>
-      <div class="col-sm-6 hh">
-        <label for="field4" id="mobent">Enter total no of Labs</label>
-        <select id="selemob" name="lab2">
+      &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+      &nbsp; &nbsp;
+      <div class="col-lg-4 col-md-6 col-sm-6 h3">
+        <label id="for" for="lecture">Enter Total no of i3 Sessions</label><br>&nbsp; &nbsp;
+        <select id="" name="ii">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
         </select>
       </div>
+
+      <button class="btn hb" type="submit" style="position:relative;top:150px;right:35%;">Proceed</button>
+      <!-- w-100 btn btn-lg btn-primary -->
     </div>
-    <div class="row">
-      <div class="col-sm-6 hh">
-        <label for="field5" id="mobent">Enter no of CRT's Attended</label>
-        <select id="selemob" name="crt1">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-      <div class="col-sm-6 hh">
-        <label for="field6" id="mobent">Enter total no of CRT's</label>
-        <select id="selemob" name="crt2">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 hh">
-        <label for="field7" id="mobent">Enter no of TPO's Attended</label>
-        <select id="selemob" name="tpo1">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-      <div class="col-sm-6 hh">
-        <label for="field8" id="mobent">Enter total no of TPO's</label>
-        <select id="selemob" name="tpo2">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-    </div>
-    </div>
-    </div>
-    <center><input type="submit" name="" class="btn"value="Submit" style="margin-top:20px;"></center>
-
-</form>
-</div>
-<!-- </center> -->
-<!-- </center> style="position:relative;top:150px;right:35%;"-->
+    <!-- </div>
+    </div> -->
+    </form>
 
 
 
 
-
-
-
-
-
-
+  </div>
   <% } %>
   <%  if (data.date == date1){ %>
   <center>
-    <div class="else">
-
-
     <h1>You have already updated your attendence today. <br> Come back tommorow to update again.</h1>
-    </div>
   </center>
   <% } %>
   <script type="text/javascript">

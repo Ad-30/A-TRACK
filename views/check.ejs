@@ -11,7 +11,7 @@
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="/css/bootstrap-grid.css">
   <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<script src="https://kit.fontawesome.com/850c737ebd.js" crossorigin="anonymous"></script>
+
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
   <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -46,12 +46,9 @@
       <input type="text" placeholder="Search here..." />
     </div>
   </nav>
+  
 
   <br><br><br><br><br><br><br><br><br>
-
-
-    <a id="log1829" href="/logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
-
 
   <h1 class="per">Hi <%=data.fname%>,</h1>
   <h1 id="head" class="per">Your current attendance percent is <%=percent%>%</h1>
@@ -66,10 +63,41 @@
     <% } %>
   </center>
   <br><br><br><br><br><br>
-  <h1 class="per" id="datecss"><%=date.toDateString()%></h1>
+  <h1 class="per"><%=date.toDateString()%></h1>
   <% if (data.date != date1) { %>
 
-
+  <!-- <form class="inline" action="/home" method="POST">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 hex">
+          <label for="">checking</label>
+        </div>
+        <div class="col-lg-4 col-sm-6 hex">
+          <label for="">checking</label>
+        </div>
+        <div class="col-lg-4 col-sm-6 hex">
+          <label for="">checking</label>
+        </div>
+        <div class="col-lg-4 col-sm-6 hex">
+          <label for="">checking</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 hex">
+          <input type="text" name="" value="">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 hex">
+          <input type="text" name="" value="">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 hex">
+          <input type="text" name="" value="">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 hex">
+          <input type="text" name="" value="">
+        </div>
+      </div>
+    </div>
+  </form> -->
   <!-- <center> -->
   <div class="best">
 
@@ -77,14 +105,14 @@
   <div class="yup">
 
 
-  <form method="post" action="/home">
+  <form action="/home" method="POST">
     <div class="size2">
 
 
     <div class="row" >
       <div class="col-sm-6 hh">
-        <label for="field1" id="mobent">Enter no of Lectures Attended</label>
-        <select id="selemob" name="lecture1">
+        <label for="field1">Enter no of Lectures Attended</label>
+        <select id="" name="lecture1">
           <option value="0">0</option>p;
           <option value="1">1</option>
           <option value="2">2</option>
@@ -96,8 +124,8 @@
         </select>
       </div>
       <div class="col-sm-6 hh">
-        <label for="field2" id="mobent">Enter total no of Lectures</label>
-        <select id="selemob" name="lecture2">
+        <label for="field2">Enter total no of Lectures</label>
+        <select id="" name="lecture2">
           <option value="0">0</option>p;
           <option value="1">1</option>
           <option value="2">2</option>
@@ -111,8 +139,8 @@
     </div>
     <div class="row">
       <div class="col-sm-6 hh">
-        <label for="field3" id="mobent">Enter no of Labs Attended</label>
-        <select id="selemob" name="lab1">
+        <label for="field3">Enter no of Labs Attended</label>
+        <select id="" name="lab1">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -122,32 +150,8 @@
         </select>
       </div>
       <div class="col-sm-6 hh">
-        <label for="field4" id="mobent">Enter total no of Labs</label>
-        <select id="selemob" name="lab2">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 hh">
-        <label for="field5" id="mobent">Enter no of CRT's Attended</label>
-        <select id="selemob" name="crt1">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-      <div class="col-sm-6 hh">
-        <label for="field6" id="mobent">Enter total no of CRT's</label>
-        <select id="selemob" name="crt2">
+        <label for="field4">Enter total no of Labs</label>
+        <select id="" name="lab2">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -159,25 +163,41 @@
     </div>
     <div class="row">
       <div class="col-sm-6 hh">
-        <label for="field7" id="mobent">Enter no of TPO's Attended</label>
-        <select id="selemob" name="tpo1">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+        <label for="field5">Enter no of CRT's Attended</label>
+        <select id="field5" name="crt1">
+          <option value="">0</option>
+          <option value="option1">1</option>
+          <option value="option2">2</option>
+          <option value="option3">3</option>
         </select>
       </div>
       <div class="col-sm-6 hh">
-        <label for="field8" id="mobent">Enter total no of TPO's</label>
-        <select id="selemob" name="tpo2">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+        <label for="field6">Enter total no of CRT's</label>
+        <select id="field5" name="crt2">
+          <option value="">0</option>
+          <option value="option1">1</option>
+          <option value="option2">2</option>
+          <option value="option3">3</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 hh">
+        <label for="field5">Enter no of TPO's Attended</label>
+        <select id="field5" name="tpo1">
+          <option value="">0</option>
+          <option value="option1">1</option>
+          <option value="option2">2</option>
+          <option value="option3">3</option>
+        </select>
+      </div>
+      <div class="col-sm-6 hh">
+        <label for="field6">Enter total no of TPO</label>
+        <select id="field6" name="tpo2">
+          <option value="">0</option>
+          <option value="option1">1</option>
+          <option value="option2">2</option>
+          <option value="option3">3</option>
         </select>
       </div>
     </div>
@@ -202,11 +222,7 @@
   <% } %>
   <%  if (data.date == date1){ %>
   <center>
-    <div class="else">
-
-
     <h1>You have already updated your attendence today. <br> Come back tommorow to update again.</h1>
-    </div>
   </center>
   <% } %>
   <script type="text/javascript">
