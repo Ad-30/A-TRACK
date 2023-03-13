@@ -17,7 +17,8 @@ const app = express();
 mongoose.connect(process.env.MONGO);
 const LocalStrategy = require('passport-local');
 let mail_id = "";
-
+let fname23 = "";
+let lname23 = "";
 let current2 = "";
 let total2 = "";
 
@@ -162,6 +163,9 @@ app.get("/login",function(req,res){
 
 
 app.post("/signup", function(req, res) {
+  fname23 = req.body.fname;
+  lname23 = req.body.lname;
+
   User.register({
     username: req.body.username
   }, req.body.password, function(err, user) {
@@ -187,7 +191,7 @@ const options = {
 const today = now.toLocaleDateString('en-IN', options);
   details = new Details({
     username : req.user.username,
-    fname : req.body.fname,
+    fname : fname23+" "+lname23,
     email : req.user.username,
     date : today,
     sem : req.body.semester,
