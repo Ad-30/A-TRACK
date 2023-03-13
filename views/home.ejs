@@ -54,7 +54,7 @@
 
 
   <h1 class="per">Hi <%=data.fname%>,</h1>
-  <h1 id="head" class="per">Your current attendance percent is <%=percent%>%</h1>
+  <h1 id="head" class="per">Your current attendance percent is <%=percent.toFixed(2)%>%</h1>
   <center><% if (percent<data.minper) { %>
     <p style="color:red;">You should collect next <%=3*(data.total)-4*(data.current)%> attendence points to maintain your attendence.</p>
     <% } %>

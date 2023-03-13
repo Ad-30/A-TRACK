@@ -1,6 +1,9 @@
 #for {
   font-size: 1.1rem;
 }
+#log1829{
+  display: none;
+}
 html{
   scroll-behavior: smooth;
 }
@@ -36,6 +39,12 @@ html{
 @media only screen and (min-width: 992px) {
   #log1829{
     display: none;
+  }
+  #selemob{
+    float:right;
+    position:relative;
+    top: 25px;
+    right:40px;
   }
 .h3 {
 position: relative;
