@@ -53,10 +53,10 @@
     <a id="log1829" href="/logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
 
 
-  <h1 class="per">Hi <%=data.fname%>,</h1>
-  <h1 id="head" class="per">Your current attendance percent is <%=percent.toFixed(2)%>%</h1>
+  <h1 class="per nacl" id="nacl">Hi <%=data.fname%>,</h1>
+  <h1 id="head" class="">Your current attendance percent is <%=percent.toFixed(2)%>%</h1>
   <center><% if (percent<data.minper) { %>
-    <p style="color:red;">You should collect next <%=3*(data.total)-4*(data.current)%> attendence points to maintain your attendence.</p>
+    <p style="color:red;">You should collect next <span class="spanpercent"><%=3*(data.total)-4*(data.current)%></span> attendence points to maintain your attendence.</p>
     <% } %>
     <% if (percent==data.minper) { %>
     <p style="color:red;">You made it, Bravo</p>

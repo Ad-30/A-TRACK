@@ -15,12 +15,44 @@ const PDFDocument = require('pdfkit');
 const storage = multer.memoryStorage();
 const app = express();
 mongoose.connect(process.env.MONGO);
+const crypto = require('crypto');
 const LocalStrategy = require('passport-local');
 let mail_id = "";
 let fname23 = "";
 let lname23 = "";
 let current2 = "";
 let total2 = "";
+let token1 = "";
+// const session = require('express-session');
+function generateToken(length) {
+  return crypto.randomBytes(Math.ceil(length / 2))
+    .toString('hex')
+    .slice(0, length);
+}
+
+app.use(session({
+    secret: 'your secret key here',
+    resave: false,
+    saveUninitialized: true
+}));
+
+app.get('/signup', (req, res) => {
+    const token = generateToken(16);
+    token1 = token;
+    req.session.token = token;
+    res.render('signup', { message: null });
+});
+
+app.get('/details', (req, res) => {
+    // Check if the token or key in the session variable matches the one generated in page A
+    if (req.session.token && req.session.token === token1) {
+        // The user is authorized to access page B
+        res.render("details");
+    } else {
+        // The user is not authorized to access page B
+        res.redirect('/signup');
+    }
+});
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -54,7 +86,9 @@ passport.use(new LocalStrategy(function verify(username, password, cb) {
     });
   });
 }));
-
+app.get("/check",function(req,res){
+  res.render("check");
+});
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -146,12 +180,12 @@ app.get("/home", function(req, res) {
     res.render("login");
   }
 });
-app.get("/signup", function(req, res) {
-  res.render('signup', { message: null });
-});
-app.get("/details", function(req, res) {
-  res.render("details");
-});
+// app.get("/signup", function(req, res) {
+//   res.render('signup', { message: null });
+// });
+// app.get("/details", function(req, res) {
+//   res.render("details");
+// });
 app.post('/login', passport.authenticate('local', {
 
   successRedirect: '/home',
@@ -264,37 +298,7 @@ const today = now.toLocaleDateString('en-IN', options);
 });
 
 
-app.get("/check",function(req,res){
-  if (req.isAuthenticated()) {
-    const now = new Date();
-  const options = {
-    timeZone: 'Asia/Kolkata',
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric'
-  };
-  const today = now.toLocaleDateString('en-IN', options);
-    const date = new Date();
-    const query = Details.findOne({username:req.user.username});
-    const promise = query.exec();
-    promise.then(function(results){
 
-      current2 = results.current;
-      total2 = results.total;
-
-      res.render('check',{
-        percent : (parseInt(current2)/parseInt(total2))*100,
-        data : results,
-        date : date,
-        date1: today
-      });
-    });
-
-
-  } else {
-    res.render("login");
-  }
-})
 
 
 app.get('/logout', function(req, res, next){
